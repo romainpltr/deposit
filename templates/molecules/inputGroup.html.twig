@@ -1,0 +1,15 @@
+
+    {% embed 'atoms/label.html.twig' with {
+        for: label.for,
+    } %}
+        {% block content %}
+            {{ label.content }}
+        {% endblock %}
+    {% endembed %}
+    <div class="mt-1">
+        {% embed 'atoms/input.html.twig' with {
+             attribute: input.attribute
+            }
+        %}
+        {% endembed %}
+    </div>

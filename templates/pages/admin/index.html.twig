@@ -1,0 +1,246 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Deposit - Administration{% endblock %}
+
+{% block body %}
+    <div class="xl:mx-auto mt-4">
+        <h1 class="text-center text-2xl">Administration</h1>
+        <div class="xl:flex block mr-2 ml-2">
+            <div class="w-full h-100 mt-4">
+                <h2 class="m-4 text-center text-md"> Liste des Etudiants</h2>
+                <div class="md:flex-col">
+                    <div class="-my-2 overflow-x-auto px-4">
+                        <div class="py-2 align-middle inline-block min-w-full">
+                            <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+                                <table class="min-w-full divide-y divide-gray-200">
+                                    <thead class="bg-gray-50">
+                                    <tr>
+                                        <th scope="col" class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            Name
+                                        </th>
+                                        <th scope="col" class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            Status
+                                        </th>
+                                        <th scope="col" class="px-4 py-3 text-left hidden md:block text-xs font-medium text-gray-500 uppercase tracking-wider sm:hidden">
+                                            Role
+                                        </th>
+                                        <th scope="col" class="relative px-6 py-3">
+                                            <span class="sr-only">Edit</span>
+                                        </th>
+                                    </tr>
+                                    </thead>
+                                    <tbody class="bg-white divide-y divide-gray-200">
+                                    {% for user in users %}
+                                        <tr>
+                                            <td class="px-2 md:px-6 py-4 whitespace-nowrap">
+                                                <div class="flex items-center">
+                                                    <div class="flex-shrink-0 h-10 w-10">
+                                                        <img class="h-10 w-10 rounded-full" alt="">
+                                                    </div>
+                                                    <div class="ml-4">
+                                                        <div class="text-sm font-medium text-gray-900">
+                                                            {{ user.firstname ~ ' ' ~ user.lastname }}
+                                                        </div>
+                                                        <div class="text-sm text-gray-500">
+                                                            {{ user.email }}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="px-2 md:px-6 py-4 sm:px-2 whitespace-nowrap">
+                                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                                  Active
+                                                </span>
+                                            </td>
+                                            <td class="px-2 md:px-6 py-4 hidden md:block whitespace-nowrap text-sm text-gray-500">
+                                                {% for role in user.roles %}
+                                                    {{ role }}
+                                                {% endfor %}
+                                            </td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                                <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                    <!-- More people... -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full h-100 mt-4">
+                <h2 class="text-center mx-auto text-md md:m-4"> Liste des Dépots</h2>
+                <div class="md:flex-col">
+                    <div class="-my-2 overflow-x-auto px-4">
+                        <div class="py-2 align-middle inline-block min-w-full">
+                            <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+                                <table class="min-w-full divide-y divide-gray-200">
+                                    <thead class="bg-gray-50">
+                                    <tr>
+                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            Name
+                                        </th>
+                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            Status
+                                        </th>
+                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            Etudiant
+                                        </th>
+                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            Créateur
+                                        </th>
+                                        <th scope="col" class="flex justify-end px-6 py-3">
+                                            {% embed 'atoms/button.html.twig' with {
+                                                type: 'a',
+                                                size: 'xs',
+                                                color: 'secondary',
+                                                href: path("deposit_new")
+                                            }%}
+                                                {% block linkContent %}
+                                                    Nouveau Dépot
+                                                {% endblock %}
+                                            {% endembed %}
+                                        </th>
+                                    </tr>
+                                    </thead>
+                                    <tbody class="bg-white divide-y divide-gray-200">
+                                    {% for depot in depots %}
+                                        <tr>
+                                            <td class="px-6 py-4 whitespace-nowrap">
+                                                <div class="flex items-center">
+                                                    <div class="ml-4">
+                                                        <div class="text-sm font-medium text-gray-900">
+                                                            {{ depot.name }}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="px-6 py-4 whitespace-nowrap">
+                                                {% if depot.status %}
+                                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                                      Ouvert
+                                                    </span>
+                                                {% else %}
+                                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">
+                                                      Fermer
+                                                    </span>
+                                                {% endif %}
+                                            </td>
+                                            <td class="px-2 py-4 whitespace-nowrap text-sm font-medium">
+                                                <div class="flex align-center flex-wrap">
+                                                    {% if depot.users %}
+                                                        {% for user in depot.users %}
+                                                            <span class="px-2 m-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-blue-800">
+                                                      {{ user.username }}
+                                                    </span>
+                                                        {% endfor %}
+                                                    {% endif %}
+                                                </div>
+                                            </td>
+                                            <td class="px-2 py-4 whitespace-nowrap text-sm font-medium  align-center justify-center ">
+                                            </td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium flex justify-end">
+                                                <div class="m-2">
+                                                    {% embed 'atoms/button.html.twig' with {
+                                                        type: 'a',
+                                                        size: 'xs',
+                                                        color: 'primary',
+                                                        href: path("deposit_edit", {id: depot.id})
+                                                    }%}
+                                                        {% block linkContent %}
+                                                            <i class="uil uil-edit-alt"></i>
+                                                        {% endblock %}
+                                                    {% endembed %}
+                                                </div>
+                                                <div class="m-2">
+                                                    {% embed 'atoms/button.html.twig' with {
+                                                        type: 'a',
+                                                        size: 'xs',
+                                                        color: 'danger',
+                                                        href: path('deposit_delete', {'id': depot.id})
+                                                    }%}
+                                                        {% block linkContent %}
+                                                            <i class="uil uil-trash"></i>
+                                                        {% endblock %}
+                                                    {% endembed %}
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        {{ knp_pagination_render(users) }}
+                                    {% endfor %}
+                                    <!-- More people... -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h2 class="m-4 text-center text-md"> Liste des Catégories</h2>
+                <div class="md:flex-col">
+                    <div class="-my-2 overflow-x-auto px-2 md:px-4">
+                        <div class="py-2 align-middle inline-block min-w-full">
+                            <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+                                <table class="min-w-full divide-y divide-gray-200">
+                                    <thead class="bg-gray-50">
+                                    <tr>
+                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            Name
+                                        </th>
+                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            Status
+                                        </th>
+                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            Role
+                                        </th>
+                                        <th scope="col" class="relative px-6 py-3">
+                                            <span class="sr-only">Edit</span>
+                                        </th>
+                                    </tr>
+                                    </thead>
+                                    <tbody class="bg-white divide-y divide-gray-200">
+                                    {% for categorie in categories %}
+
+                                        <tr>
+                                            <td class="px-6 py-4 whitespace-nowrap">
+                                                <div class="flex items-center">
+                                                    <div class="flex-shrink-0 h-10 w-10">
+                                                        <img class="h-10 w-10 rounded-full" alt="">
+                                                    </div>
+                                                    <div class="ml-4">
+                                                        <div class="text-sm font-medium text-gray-900">
+                                                            {{ categorie.name }}
+                                                        </div>
+                                                        <div class="text-sm text-gray-500">
+                                                            {% for work in categorie.works %}
+
+                                                            {% endfor %}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="px-6 py-4 whitespace-nowrap">
+                                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                                  Active
+                                                </span>
+                                            </td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                                Admin
+                                            </td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                                <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                    <!-- More people... -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

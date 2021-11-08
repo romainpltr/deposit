@@ -1,0 +1,13 @@
+
+<input
+        {% if attribute.id is defined %} id="{{ attribute.id }}" {% endif %}
+        {% if attribute.type is defined %} type="{{ attribute.type }}" {% endif %}
+        {% if attribute.name is defined %} name="{{ attribute.name }}" {% endif %}
+        {% if attribute.placeholder is defined %} placeholder="{{ attribute.placeholder }}" {% endif %}
+        {% if attribute.autocomplete is defined %} autocomplete="{{attribute.autocomplete }}" {% endif %}
+        {% if attribute.value is defined %} value="{{ attribute.value }}" {% endif %}
+        {% if attribute.required is defined %} required {% endif %}
+        {% if attribute.autofocus is defined %} autsofocus {% endif %}
+
+        class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
+>

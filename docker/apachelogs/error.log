@@ -1,0 +1,203 @@
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.18.0.5. Set the 'ServerName' directive globally to suppress this message
+[Mon Sep 21 14:39:17.193873 2020] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.38 (Debian) configured -- resuming normal operations
+[Mon Sep 21 14:39:17.193934 2020] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.18.0.5. Set the 'ServerName' directive globally to suppress this message
+[Mon Sep 21 15:07:16.560658 2020] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.38 (Debian) configured -- resuming normal operations
+[Mon Sep 21 15:07:16.560745 2020] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.18.0.5. Set the 'ServerName' directive globally to suppress this message
+[Tue Sep 22 09:49:40.689165 2020] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.38 (Debian) configured -- resuming normal operations
+[Tue Sep 22 09:49:40.689237 2020] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.18.0.5. Set the 'ServerName' directive globally to suppress this message
+[Tue Sep 22 09:53:01.027594 2020] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.38 (Debian) configured -- resuming normal operations
+[Tue Sep 22 09:53:01.027668 2020] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.18.0.6. Set the 'ServerName' directive globally to suppress this message
+
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.18.0.6. Set the 'ServerName' directive globally to suppress this message
+[Mon Oct 05 09:37:54.420243 2020] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.38 (Debian) configured -- resuming normal operations
+[Mon Oct 05 09:37:54.420290 2020] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.18.0.6. Set the 'ServerName' directive globally to suppress this message
+[Mon Oct 05 13:55:29.565333 2020] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.38 (Debian) configured -- resuming normal operations
+[Mon Oct 05 13:55:29.565390 2020] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.18.0.6. Set the 'ServerName' directive globally to suppress this message
+[Mon Oct 05 14:16:41.051406 2020] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.38 (Debian) configured -- resuming normal operations
+[Mon Oct 05 14:16:41.051466 2020] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.18.0.6. Set the 'ServerName' directive globally to suppress this message
+[Mon Oct 12 07:59:48.180522 2020] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.38 (Debian) configured -- resuming normal operations
+[Mon Oct 12 07:59:48.180575 2020] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.18.0.6. Set the 'ServerName' directive globally to suppress this message
+[Mon Oct 12 13:31:37.936663 2020] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.38 (Debian) configured -- resuming normal operations
+[Mon Oct 12 13:31:37.936746 2020] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+[Wed Oct 14 15:43:54.620496 2020] [mpm_prefork:notice] [pid 1] AH00170: caught SIGWINCH, shutting down gracefully
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.22.0.6. Set the 'ServerName' directive globally to suppress this message
+[Thu Oct 15 06:43:50.020706 2020] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.38 (Debian) configured -- resuming normal operations
+[Thu Oct 15 06:43:50.021407 2020] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+[Thu Oct 15 12:08:08.494668 2020] [mpm_prefork:notice] [pid 1] AH00170: caught SIGWINCH, shutting down gracefully
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.23.0.2. Set the 'ServerName' directive globally to suppress this message
+[Fri Oct 23 08:12:30.825728 2020] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.38 (Debian) configured -- resuming normal operations
+[Fri Oct 23 08:12:30.827527 2020] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+[Fri Oct 23 08:24:10.611393 2020] [mpm_prefork:notice] [pid 1] AH00170: caught SIGWINCH, shutting down gracefully
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.23.0.2. Set the 'ServerName' directive globally to suppress this message
+[Tue Oct 27 15:42:21.054031 2020] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.38 (Debian) configured -- resuming normal operations
+[Tue Oct 27 15:42:21.054783 2020] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+[Tue Oct 27 16:29:14.377239 2020] [mpm_prefork:notice] [pid 1] AH00170: caught SIGWINCH, shutting down gracefully
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.22.0.7. Set the 'ServerName' directive globally to suppress this message
+[Wed Oct 28 08:08:39.121900 2020] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.38 (Debian) configured -- resuming normal operations
+[Wed Oct 28 08:08:39.123022 2020] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+[Wed Oct 28 08:36:05.945199 2020] [mpm_prefork:notice] [pid 1] AH00170: caught SIGWINCH, shutting down gracefully
+[04-Nov-2020 14:34:23 Europe/Paris] 2020-11-04T14:34:23+01:00 [critical] Uncaught Exception: Specified non-existing directory "/var/www/app/src/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Tree/Entity" as Doctrine mapping source.
+[04-Nov-2020 14:34:23 Europe/Paris] 2020-11-04T14:34:23+01:00 [critical] Uncaught Exception: Specified non-existing directory "/var/www/app/src/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Tree/Entity" as Doctrine mapping source.
+[04-Nov-2020 14:34:24 Europe/Paris] 2020-11-04T14:34:24+01:00 [critical] Uncaught Exception: Specified non-existing directory "/var/www/app/src/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Tree/Entity" as Doctrine mapping source.
+[04-Nov-2020 14:34:24 Europe/Paris] 2020-11-04T14:34:24+01:00 [critical] Uncaught Exception: Specified non-existing directory "/var/www/app/src/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Tree/Entity" as Doctrine mapping source.
+[04-Nov-2020 14:34:25 Europe/Paris] 2020-11-04T14:34:25+01:00 [critical] Uncaught Exception: Specified non-existing directory "/var/www/app/src/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Tree/Entity" as Doctrine mapping source.
+[04-Nov-2020 14:34:25 Europe/Paris] 2020-11-04T14:34:25+01:00 [critical] Uncaught Exception: Specified non-existing directory "/var/www/app/src/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Tree/Entity" as Doctrine mapping source.
+[04-Nov-2020 14:34:27 Europe/Paris] 2020-11-04T14:34:27+01:00 [critical] Uncaught Exception: Specified non-existing directory "/var/www/app/src/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Tree/Entity" as Doctrine mapping source.
+[04-Nov-2020 14:56:44 Europe/Paris] 2020-11-04T14:56:44+01:00 [critical] Uncaught Exception: Specified non-existing directory "/var/www/app/src/../vendor/gedmo/doctrine-extensions/src/Tree/Entity" as Doctrine mapping source.
+[Wed Nov 04 14:20:14.237876 2020] [mpm_prefork:notice] [pid 1] AH00170: caught SIGWINCH, shutting down gracefully
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.23.0.2. Set the 'ServerName' directive globally to suppress this message
+[Wed Nov 04 14:20:34.263029 2020] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.38 (Debian) configured -- resuming normal operations
+[Wed Nov 04 14:20:34.263082 2020] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+[04-Nov-2020 15:38:06 Europe/Paris] 2020-11-04T15:38:06+01:00 [critical] Uncaught Exception: Specified non-existing directory "/var/www/app/src/../vendor/gedmo/doctrine-extensions/src/Tree/Entity" as Doctrine mapping source.
+[04-Nov-2020 15:39:34 Europe/Paris] 2020-11-04T15:39:34+01:00 [critical] Uncaught Exception: Specified non-existing directory "/var/www/app/src/../vendor/gedmo/doctrine-extensions/src/Tree/Entity" as Doctrine mapping source.
+[04-Nov-2020 15:39:39 Europe/Paris] 2020-11-04T15:39:39+01:00 [critical] Uncaught Exception: Specified non-existing directory "/var/www/app/src/../vendor/gedmo/doctrine-extensions/src/Tree/Entity" as Doctrine mapping source.
+[Wed Nov 04 16:54:36.416530 2020] [mpm_prefork:notice] [pid 1] AH00170: caught SIGWINCH, shutting down gracefully
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.22.0.7. Set the 'ServerName' directive globally to suppress this message
+[Thu Nov 05 07:44:15.087605 2020] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.38 (Debian) configured -- resuming normal operations
+[Thu Nov 05 07:44:15.088894 2020] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+[Thu Nov 05 13:14:26.009275 2020] [mpm_prefork:notice] [pid 1] AH00170: caught SIGWINCH, shutting down gracefully
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.18.0.6. Set the 'ServerName' directive globally to suppress this message
+[Wed Nov 18 13:58:10.544599 2020] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.38 (Debian) configured -- resuming normal operations
+[Wed Nov 18 13:58:10.544652 2020] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+[Wed Nov 18 13:59:14.608466 2020] [core:notice] [pid 1] AH00052: child pid 49 exit signal Interrupt (2)
+[Wed Nov 18 13:59:35.627437 2020] [core:notice] [pid 1] AH00052: child pid 79 exit signal Interrupt (2)
+[Wed Nov 18 14:01:02.709553 2020] [core:notice] [pid 1] AH00052: child pid 109 exit signal Interrupt (2)
+[Wed Nov 18 14:03:28.839780 2020] [core:notice] [pid 1] AH00052: child pid 245 exit signal Interrupt (2)
+[Wed Nov 18 14:05:48.989383 2020] [core:notice] [pid 1] AH00052: child pid 286 exit signal Interrupt (2)
+[Wed Nov 18 14:06:45.048431 2020] [core:notice] [pid 1] AH00052: child pid 316 exit signal Interrupt (2)
+[Wed Nov 18 14:15:30.565341 2020] [core:notice] [pid 1] AH00052: child pid 349 exit signal Interrupt (2)
+[Wed Nov 18 14:22:32.053399 2020] [core:notice] [pid 1] AH00052: child pid 408 exit signal Interrupt (2)
+[Wed Nov 18 14:24:24.159118 2020] [core:notice] [pid 1] AH00052: child pid 477 exit signal Interrupt (2)
+[Wed Nov 18 14:27:56.364318 2020] [core:notice] [pid 1] AH00052: child pid 547 exit signal Interrupt (2)
+[Wed Nov 18 14:28:34.417335 2020] [core:notice] [pid 1] AH00052: child pid 579 exit signal Interrupt (2)
+[Wed Nov 18 14:33:32.756312 2020] [core:notice] [pid 1] AH00052: child pid 609 exit signal Interrupt (2)
+[Wed Nov 18 14:37:36.983672 2020] [core:notice] [pid 1] AH00052: child pid 639 exit signal Interrupt (2)
+[Wed Nov 18 14:39:17.080057 2020] [core:notice] [pid 1] AH00052: child pid 669 exit signal Interrupt (2)
+[Wed Nov 18 14:39:29.091612 2020] [core:notice] [pid 1] AH00052: child pid 699 exit signal Interrupt (2)
+[Wed Nov 18 14:56:53.099277 2020] [core:notice] [pid 1] AH00052: child pid 945 exit signal Interrupt (2)
+[Wed Nov 18 14:58:37.196453 2020] [core:notice] [pid 1] AH00052: child pid 975 exit signal Interrupt (2)
+[Wed Nov 18 15:04:04.517540 2020] [core:notice] [pid 1] AH00052: child pid 1016 exit signal Interrupt (2)
+[Wed Nov 18 15:09:49.175925 2020] [mpm_prefork:notice] [pid 1] AH00170: caught SIGWINCH, shutting down gracefully
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.18.0.6. Set the 'ServerName' directive globally to suppress this message
+[Wed Nov 18 15:09:57.173491 2020] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.38 (Debian) configured -- resuming normal operations
+[Wed Nov 18 15:09:57.173543 2020] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+[Wed Nov 18 15:14:57.465573 2020] [core:notice] [pid 1] AH00052: child pid 51 exit signal Interrupt (2)
+[Wed Nov 18 15:21:20.841496 2020] [core:notice] [pid 1] AH00052: child pid 96 exit signal Interrupt (2)
+[Wed Nov 18 15:24:52.054708 2020] [core:notice] [pid 1] AH00052: child pid 126 exit signal Interrupt (2)
+[Wed Nov 18 15:27:22.198500 2020] [core:notice] [pid 1] AH00052: child pid 178 exit signal Interrupt (2)
+[Wed Nov 18 15:35:05.651702 2020] [core:notice] [pid 1] AH00052: child pid 282 exit signal Interrupt (2)
+[Wed Nov 18 15:35:46.694534 2020] [core:notice] [pid 1] AH00052: child pid 312 exit signal Interrupt (2)
+[Wed Nov 18 15:36:25.733788 2020] [core:notice] [pid 1] AH00052: child pid 343 exit signal Interrupt (2)
+[Wed Nov 18 15:36:48.751668 2020] [core:notice] [pid 1] AH00052: child pid 373 exit signal Interrupt (2)
+[Wed Nov 18 15:37:30.803855 2020] [core:notice] [pid 1] AH00052: child pid 403 exit signal Interrupt (2)
+[Wed Nov 18 15:40:32.980460 2020] [core:notice] [pid 1] AH00052: child pid 433 exit signal Interrupt (2)
+[Wed Nov 18 15:41:20.024344 2020] [core:notice] [pid 1] AH00052: child pid 474 exit signal Interrupt (2)
+[Wed Nov 18 15:41:44.050383 2020] [core:notice] [pid 1] AH00052: child pid 504 exit signal Interrupt (2)
+[Wed Nov 18 15:42:18.083875 2020] [core:notice] [pid 1] AH00052: child pid 534 exit signal Interrupt (2)
+[Wed Nov 18 15:42:50.112369 2020] [core:notice] [pid 1] AH00052: child pid 564 exit signal Interrupt (2)
+[Wed Nov 18 15:47:10.371602 2020] [core:notice] [pid 1] AH00052: child pid 594 exit signal Interrupt (2)
+[Wed Nov 18 15:48:27.437876 2020] [core:notice] [pid 1] AH00052: child pid 624 exit signal Interrupt (2)
+[Wed Nov 18 15:49:42.507692 2020] [core:notice] [pid 1] AH00052: child pid 654 exit signal Interrupt (2)
+[Wed Nov 18 15:49:48.828551 2020] [mpm_prefork:notice] [pid 1] AH00170: caught SIGWINCH, shutting down gracefully
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.18.0.6. Set the 'ServerName' directive globally to suppress this message
+[Wed Nov 18 15:49:50.933277 2020] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.38 (Debian) configured -- resuming normal operations
+[Wed Nov 18 15:49:50.933327 2020] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+[Wed Nov 18 15:52:11.066589 2020] [core:notice] [pid 1] AH00052: child pid 49 exit signal Interrupt (2)
+[Wed Nov 18 15:53:34.147589 2020] [core:notice] [pid 1] AH00052: child pid 79 exit signal Interrupt (2)
+[Wed Nov 18 15:55:51.284656 2020] [core:notice] [pid 1] AH00052: child pid 109 exit signal Interrupt (2)
+[Wed Nov 18 16:01:54.637567 2020] [core:notice] [pid 1] AH00052: child pid 163 exit signal Interrupt (2)
+[Wed Nov 18 16:04:12.771960 2020] [core:notice] [pid 1] AH00052: child pid 232 exit signal Interrupt (2)
+[Wed Nov 18 16:04:49.808384 2020] [core:notice] [pid 1] AH00052: child pid 262 exit signal Interrupt (2)
+[Wed Nov 18 16:05:38.856633 2020] [core:notice] [pid 1] AH00052: child pid 293 exit signal Interrupt (2)
+[Wed Nov 18 16:07:25.958548 2020] [core:notice] [pid 1] AH00052: child pid 323 exit signal Interrupt (2)
+[Wed Nov 18 16:09:45.093490 2020] [core:notice] [pid 1] AH00052: child pid 353 exit signal Interrupt (2)
+[Wed Nov 18 16:10:07.115786 2020] [core:notice] [pid 1] AH00052: child pid 383 exit signal Interrupt (2)
+[Wed Nov 18 16:13:50.328392 2020] [core:notice] [pid 1] AH00052: child pid 435 exit signal Interrupt (2)
+[Wed Nov 18 16:15:49.443615 2020] [core:notice] [pid 1] AH00052: child pid 520 exit signal Interrupt (2)
+[Wed Nov 18 16:21:48.789578 2020] [core:notice] [pid 1] AH00052: child pid 550 exit signal Interrupt (2)
+[Wed Nov 18 16:22:41.844402 2020] [core:notice] [pid 1] AH00052: child pid 569 exit signal Interrupt (2)
+[Wed Nov 18 16:22:41.844492 2020] [core:notice] [pid 1] AH00052: child pid 580 exit signal Interrupt (2)
+[Wed Nov 18 16:24:16.936459 2020] [core:notice] [pid 1] AH00052: child pid 610 exit signal Interrupt (2)
+[Wed Nov 18 16:24:53.971735 2020] [core:notice] [pid 1] AH00052: child pid 640 exit signal Interrupt (2)
+[Wed Nov 18 16:35:06.571754 2020] [core:notice] [pid 1] AH00052: child pid 670 exit signal Interrupt (2)
+[Wed Nov 18 16:36:33.655675 2020] [core:notice] [pid 1] AH00052: child pid 700 exit signal Interrupt (2)
+[Wed Nov 18 16:37:48.727582 2020] [core:notice] [pid 1] AH00052: child pid 730 exit signal Interrupt (2)
+[Wed Nov 18 16:39:28.826591 2020] [core:notice] [pid 1] AH00052: child pid 761 exit signal Interrupt (2)
+[Wed Nov 18 16:39:45.843311 2020] [core:notice] [pid 1] AH00052: child pid 791 exit signal Interrupt (2)
+[Wed Nov 18 16:40:11.869505 2020] [core:notice] [pid 1] AH00052: child pid 821 exit signal Interrupt (2)
+[Wed Nov 18 16:44:59.156462 2020] [core:notice] [pid 1] AH00052: child pid 854 exit signal Interrupt (2)
+[Wed Nov 18 16:46:46.261490 2020] [core:notice] [pid 1] AH00052: child pid 884 exit signal Interrupt (2)
+[Wed Nov 18 16:50:05.456447 2020] [core:notice] [pid 1] AH00052: child pid 914 exit signal Interrupt (2)
+[Wed Nov 18 16:51:26.077886 2020] [mpm_prefork:notice] [pid 1] AH00170: caught SIGWINCH, shutting down gracefully
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.19.0.2. Set the 'ServerName' directive globally to suppress this message
+[Thu Nov 19 09:53:07.793879 2020] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.38 (Debian) configured -- resuming normal operations
+[Thu Nov 19 09:53:07.793994 2020] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.18.0.6. Set the 'ServerName' directive globally to suppress this message
+[Wed Dec 23 16:04:46.603921 2020] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.38 (Debian) configured -- resuming normal operations
+[Wed Dec 23 16:04:46.603969 2020] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+[Wed Dec 23 16:06:56.534056 2020] [mpm_prefork:notice] [pid 1] AH00170: caught SIGWINCH, shutting down gracefully
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.18.0.6. Set the 'ServerName' directive globally to suppress this message
+[Wed Dec 23 16:07:34.309831 2020] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.38 (Debian) configured -- resuming normal operations
+[Wed Dec 23 16:07:34.309895 2020] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+[Wed Dec 23 16:13:06.614504 2020] [core:notice] [pid 1] AH00052: child pid 50 exit signal Interrupt (2)
+[Wed Dec 23 16:25:15.310428 2020] [core:notice] [pid 1] AH00052: child pid 86 exit signal Interrupt (2)
+[Wed Dec 23 16:27:46.049097 2020] [mpm_prefork:notice] [pid 1] AH00170: caught SIGWINCH, shutting down gracefully
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.18.0.6. Set the 'ServerName' directive globally to suppress this message
+[Tue Dec 29 08:41:24.831557 2020] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.38 (Debian) configured -- resuming normal operations
+[Tue Dec 29 08:41:24.831694 2020] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+[Tue Dec 29 08:49:40.323756 2020] [core:notice] [pid 1] AH00052: child pid 63 exit signal Interrupt (2)
+[Tue Dec 29 08:51:41.444720 2020] [core:notice] [pid 1] AH00052: child pid 90 exit signal Interrupt (2)
+[Tue Dec 29 08:51:41.445674 2020] [core:notice] [pid 1] AH00052: child pid 102 exit signal Interrupt (2)
+[Tue Dec 29 08:55:20.654074 2020] [core:notice] [pid 1] AH00052: child pid 132 exit signal Interrupt (2)
+[Tue Dec 29 08:56:18.712841 2020] [core:notice] [pid 1] AH00052: child pid 162 exit signal Interrupt (2)
+[Tue Dec 29 08:57:54.806599 2020] [core:notice] [pid 1] AH00052: child pid 192 exit signal Interrupt (2)
+[Tue Dec 29 09:00:45.979752 2020] [core:notice] [pid 1] AH00052: child pid 222 exit signal Interrupt (2)
+[Tue Dec 29 09:01:45.032826 2020] [core:notice] [pid 1] AH00052: child pid 252 exit signal Interrupt (2)
+[Tue Dec 29 09:03:27.136709 2020] [core:notice] [pid 1] AH00052: child pid 282 exit signal Interrupt (2)
+[Tue Dec 29 09:04:55.222630 2020] [core:notice] [pid 1] AH00052: child pid 312 exit signal Interrupt (2)
+[Tue Dec 29 09:12:27.651111 2020] [core:notice] [pid 1] AH00052: child pid 342 exit signal Interrupt (2)
+[Tue Dec 29 09:25:00.369976 2020] [core:notice] [pid 1] AH00052: child pid 372 exit signal Interrupt (2)
+[Tue Dec 29 09:32:23.787642 2020] [core:notice] [pid 1] AH00052: child pid 402 exit signal Interrupt (2)
+[Tue Dec 29 09:37:11.068721 2020] [core:notice] [pid 1] AH00052: child pid 432 exit signal Interrupt (2)
+[Tue Dec 29 09:38:51.166258 2020] [core:notice] [pid 1] AH00052: child pid 462 exit signal Interrupt (2)
+[Tue Dec 29 09:39:37.210720 2020] [core:notice] [pid 1] AH00052: child pid 492 exit signal Interrupt (2)
+[Tue Dec 29 09:42:25.370719 2020] [core:notice] [pid 1] AH00052: child pid 522 exit signal Interrupt (2)
+[Tue Dec 29 09:44:40.499658 2020] [core:notice] [pid 1] AH00052: child pid 552 exit signal Interrupt (2)
+[Tue Dec 29 09:46:13.590623 2020] [core:notice] [pid 1] AH00052: child pid 582 exit signal Interrupt (2)
+[Tue Dec 29 09:52:23.935828 2020] [core:notice] [pid 1] AH00052: child pid 612 exit signal Interrupt (2)
+[Tue Dec 29 09:54:24.052817 2020] [core:notice] [pid 1] AH00052: child pid 642 exit signal Interrupt (2)
+[Tue Dec 29 09:56:24.167752 2020] [core:notice] [pid 1] AH00052: child pid 672 exit signal Interrupt (2)
+[Tue Dec 29 09:57:35.230890 2020] [core:notice] [pid 1] AH00052: child pid 702 exit signal Interrupt (2)
+[Tue Dec 29 09:59:06.318633 2020] [core:notice] [pid 1] AH00052: child pid 732 exit signal Interrupt (2)
+[Tue Dec 29 09:59:57.369905 2020] [core:notice] [pid 1] AH00052: child pid 762 exit signal Interrupt (2)
+[Tue Dec 29 10:06:31.735946 2020] [core:notice] [pid 1] AH00052: child pid 792 exit signal Interrupt (2)
+[Tue Dec 29 10:24:20.742481 2020] [core:notice] [pid 1] AH00052: child pid 833 exit signal Interrupt (2)
+[Tue Dec 29 10:25:31.806278 2020] [core:notice] [pid 1] AH00052: child pid 863 exit signal Interrupt (2)
+[Tue Dec 29 10:46:49.011747 2020] [core:notice] [pid 1] AH00052: child pid 893 exit signal Interrupt (2)
+[Tue Dec 29 10:47:54.074273 2020] [core:notice] [pid 1] AH00052: child pid 923 exit signal Interrupt (2)
+[Tue Dec 29 10:54:50.466425 2020] [core:notice] [pid 1] AH00052: child pid 953 exit signal Interrupt (2)
+[Tue Dec 29 10:55:40.513727 2020] [core:notice] [pid 1] AH00052: child pid 983 exit signal Interrupt (2)
+[Tue Dec 29 11:01:04.817882 2020] [core:notice] [pid 1] AH00052: child pid 1013 exit signal Interrupt (2)
+[Tue Dec 29 11:01:45.858569 2020] [core:notice] [pid 1] AH00052: child pid 1043 exit signal Interrupt (2)
+[Tue Dec 29 13:07:27.298731 2020] [core:notice] [pid 1] AH00052: child pid 1073 exit signal Interrupt (2)
+[Tue Dec 29 16:39:06.704790 2020] [mpm_prefork:notice] [pid 1] AH00170: caught SIGWINCH, shutting down gracefully
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.18.0.7. Set the 'ServerName' directive globally to suppress this message
+[Wed Dec 30 08:33:43.225694 2020] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.38 (Debian) configured -- resuming normal operations
+[Wed Dec 30 08:33:43.225837 2020] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+[Wed Dec 30 08:41:06.671231 2020] [core:notice] [pid 1] AH00052: child pid 51 exit signal Interrupt (2)
+[Wed Dec 30 09:16:44.760321 2020] [core:notice] [pid 1] AH00052: child pid 101 exit signal Interrupt (2)
+[Wed Dec 30 09:17:43.815201 2020] [core:notice] [pid 1] AH00052: child pid 119 exit signal Interrupt (2)
+[Wed Dec 30 09:17:43.815310 2020] [core:notice] [pid 1] AH00052: child pid 131 exit signal Interrupt (2)
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.18.0.7. Set the 'ServerName' directive globally to suppress this message
+[Wed Dec 30 10:41:30.008391 2020] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.38 (Debian) configured -- resuming normal operations
+[Wed Dec 30 10:41:30.008433 2020] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+[Wed Dec 30 10:41:38.345584 2020] [mpm_prefork:notice] [pid 1] AH00170: caught SIGWINCH, shutting down gracefully

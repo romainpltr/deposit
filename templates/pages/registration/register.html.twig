@@ -1,0 +1,82 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Log in!{% endblock %}
+{% block body %}
+    <div class="container mx-auto p-2">
+        {% for flashError in app.flashes('verify_email_error') %}
+            <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+        {% endfor %}
+        <h1 class="text-center m-2">Inscription</h1>
+        {{ form_errors(registrationForm) }}
+        {{ form_start(registrationForm) }}
+            <div>
+                <label for="firstname" class="block text-sm font-medium text-gray-700">{{ form_label(registrationForm.firstname) }}</label>
+                <div class="mt-1">
+                    {{ form_widget(registrationForm.firstname, {
+                        'attr': {
+                            'id': "firstname",
+                            'class': 'shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md',
+                        }
+                    }) }}
+                </div>
+            </div>
+            <div>
+                <label for="lastname" class="block text-sm font-medium text-gray-700">{{ form_label(registrationForm.lastname) }}</label>
+                <div class="mt-1">
+                    {{ form_widget(registrationForm.lastname, {
+                        'attr': {
+                            'id': "firstname",
+                            'class': 'shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md',
+                        }
+                    }) }}
+                </div>
+            </div>
+            <div>
+                <label for="email" class="block text-sm font-medium text-gray-700">{{ form_label(registrationForm.email) }}</label>
+                <div class="mt-1">
+                    {{ form_widget(registrationForm.email, {
+                        'attr': {
+                            'class': 'shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md',
+                            'placeholder': 'you@example.com',
+                            'id': 'email'
+                        }
+                    }) }}
+                </div>
+            </div>
+            <div>
+                <label for="password" class="block text-sm font-medium text-gray-700">{{ form_label(registrationForm.plainPassword.first) }}</label>
+                <div class="mt-1">
+                    {{ form_widget(registrationForm.plainPassword.first, {
+                        'attr': {
+                            'name': "password",
+                            'class': 'shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md',
+                        }
+                    }) }}
+                </div>
+            </div>
+            <div>
+                <label for="password" class="block text-sm font-medium text-gray-700">{{ form_label(registrationForm.plainPassword.second) }}</label>
+                <div class="mt-1">
+                    {{ form_widget(registrationForm.plainPassword.second, {
+                        'attr': {
+                            'name': "password",
+                            'class': 'shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md',
+                        }
+                    }) }}
+                </div>
+            </div>
+            <div class="mt-2 mb-2">
+                {{ form_widget(registrationForm.recaptcha) }}
+            </div>
+            {% embed 'atoms/button.html.twig' with {
+                type: 'submit',
+                size: 'md',
+                color: 'primary'
+            }%}
+                {% block btnContent %}
+                    S'inscrire
+                {% endblock %}
+            {% endembed %}
+        {{ form_end(registrationForm) }}
+    </div>
+{% endblock %}

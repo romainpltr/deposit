@@ -1,0 +1,69 @@
+version: '3.7'
+
+services:
+  app:
+    build:
+      target: dev
+      context: .
+    depends_on:
+      - db
+    networks:
+      - frontend
+      - backend
+    volumes:
+      - .:/app
+  
+  db:
+    image: mysql:5.7
+    environment:
+      - MYSQL_ROOT_PASSWORD=depotEtudiant
+      - MYSQL_USER=depotEtudiant-user
+      - MYSQL_PASSWORD=*T4SZ7@*Sw
+      - MYSQL_DATABASE=depotEtudiant
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - backend
+
+  mercure:
+    image: dunglas/mercure
+    ports:
+      - "3000:80"
+    environment:
+      DEBUG: "debug"
+      SERVER_NAME: ':80'
+        # Change the following value if you know how it works.
+        # MERCURE_TRANSPORT_URL: "bolt://mercure.db"
+      MERCURE_PUBLISHER_JWT_KEY: '!ChangeMe'
+      MERCURE_SUBSCRIBER_JWT_KEY: '!ChangeMe'
+        # In the cors_origin, add your domain(s). Or just use *
+      MERCURE_EXTRA_DIRECTIVES: |-
+            cors_origins *
+            anonymous
+    networks:
+      - backend
+
+  mailcatcher:
+    image: dockage/mailcatcher:0.7.1
+    ports:
+      - 1080:1080
+      - 1025:1025
+    networks:
+      - backend
+
+  redis:
+    image: bitnami/redis:5.0
+    networks:
+      - backend
+    environment:
+      - REDIS_PASSWORD=depotEtudiant
+    ports:
+      - 2541:6379
+    command: /run.sh --maxmemory 100mb
+
+volumes:
+  db_data:
+
+networks:
+  frontend:
+  backend:
