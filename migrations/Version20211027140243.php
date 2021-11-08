@@ -34,4 +34,9 @@ final class Version20211027140243 extends AbstractMigration
         $this->addSql('DROP INDEX IDX_8D93D6499815E4B1 ON user');
         $this->addSql('ALTER TABLE user DROP deposit_id');
     }
+
+    public function isTransactional(): bool
+    {
+        return false;
+    }
 }

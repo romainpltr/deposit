@@ -1,20 +1,88 @@
 {% include 'base.html.twig' %}
 {% block body %}
     {% if user.deposits %}
+        <h1 class="text-center text-lg">Tous mes dépots</h1>
+        <div class="grid grid-cols-3 gap-4 m-4">
         {% for depot in user.deposits %}
-            <div class="bg-white px-4 py-5 border-b border-gray-200 sm:px-6">
+            <div class="bg-white px-4 py-5 border-b rounded-md shadow-md border-gray-200 sm:px-6">
                 <div class="-ml-4 -mt-2 flex items-center justify-between flex-wrap sm:flex-nowrap">
                     <div class="ml-4 mt-2">
-                        <h3 class="text-lg leading-6 font-medium text-gray-900">
-                            {{ depot.name }}
-                        </h3>
+                        <div class="flex items-center">
+                            <div class="ml-2">
+                                <div class="flex items-center text-gray-900">
+                                    <div class="mr-2 leading-5">
+                                        {{ depot.name }}
+                                    </div>
+                                    <div>
+                                        {% if depot.status %}
+                                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                                      Ouvert
+                                                    </span>
+                                        {% else %}
+                                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">
+                                                      Fermer
+                                                    </span>
+                                        {% endif %}
+                                    </div>
+
+                                </div>
+                                <div class="text-sm text-gray-500">
+                                    Créateur : {{ depot.creator.username }}
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                    {% if depot.status %}
                     <div class="ml-4 mt-2 flex-shrink-0">
                         <button type="button" class="relative inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                            Create new job
+                            Ajouter un nouveau travail
                         </button>
                     </div>
+                    {% endif %}
                 </div>
             </div>
         {% endfor %}
+        {% if user.groupe %}
+            {% for depot in user.groupe.deposits %}
+                    <div class="bg-white px-4 py-5 border-b rounded-md shadow-md border-gray-200 sm:px-6">
+                        <div class="-ml-4 -mt-2 flex items-center justify-between flex-wrap sm:flex-nowrap">
+                            <div class="ml-4 mt-2">
+                                <div class="flex items-center">
+                                    <div class="ml-2">
+                                        <div class="flex items-center text-gray-900">
+                                            <div class="mr-2 leading-5">
+                                                {{ depot.name }}
+                                            </div>
+                                            <div>
+                                                {% if depot.status %}
+                                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                                          Ouvert
+                                                        </span>
+                                                {% else %}
+                                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">
+                                                          Fermer
+                                                        </span>
+                                                {% endif %}
+                                            </div>
+
+                                        </div>
+                                        <div class="text-sm text-gray-500">
+                                            Créateur : {{ depot.creator.username }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% if depot.status %}
+                                <div class="ml-4 mt-2 flex-shrink-0">
+                                    <button type="button" class="relative inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                        Ajouter un nouveau travail
+                                    </button>
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+    {% endif %}
 {% endblock %}

@@ -30,4 +30,9 @@ final class Version20211028175325 extends AbstractMigration
         // this down() migration is auto-generated, please modify it to your needs
         $this->addSql('DROP TABLE deposit_user');
     }
+
+    public function isTransactional(): bool
+    {
+        return false;
+    }
 }

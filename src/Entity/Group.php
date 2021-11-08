@@ -2,15 +2,16 @@
 
 namespace App\Entity;
 
-use App\Repository\CategoryRepository;
+use App\Repository\GroupRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=CategoryRepository::class)
+ * @ORM\Entity(repositoryClass=GroupRepository::class)
+ * @ORM\Table(name="`group`")
  */
-class Category
+class Group
 {
     /**
      * @ORM\Id
@@ -25,18 +26,18 @@ class Category
     private $name;
 
     /**
-     * @ORM\OneToMany(targetEntity=Work::class, mappedBy="category")
+     * @ORM\OneToMany(targetEntity=User::class, mappedBy="groupe")
      */
-    private $works;
+    private $users;
 
     /**
-     * @ORM\OneToMany(targetEntity=Deposit::class, mappedBy="category")
+     * @ORM\ManyToMany(targetEntity=Deposit::class, mappedBy="groups")
      */
     private $deposits;
 
     public function __construct()
     {
-        $this->works = new ArrayCollection();
+        $this->users = new ArrayCollection();
         $this->deposits = new ArrayCollection();
     }
 
@@ -58,29 +59,29 @@ class Category
     }
 
     /**
-     * @return Collection|Work[]
+     * @return Collection|User[]
      */
-    public function getWorks(): Collection
+    public function getUsers(): Collection
     {
-        return $this->works;
+        return $this->users;
     }
 
-    public function addWork(Work $work): self
+    public function addUser(User $user): self
     {
-        if (!$this->works->contains($work)) {
-            $this->works[] = $work;
-            $work->setCategory($this);
+        if (!$this->users->contains($user)) {
+            $this->users[] = $user;
+            $user->setGroupe($this);
         }
 
         return $this;
     }
 
-    public function removeWork(Work $work): self
+    public function removeUser(User $user): self
     {
-        if ($this->works->removeElement($work)) {
+        if ($this->users->removeElement($user)) {
             // set the owning side to null (unless already changed)
-            if ($work->getCategory() === $this) {
-                $work->setCategory(null);
+            if ($user->getGroupe() === $this) {
+                $user->setGroupe(null);
             }
         }
 
@@ -99,7 +100,7 @@ class Category
     {
         if (!$this->deposits->contains($deposit)) {
             $this->deposits[] = $deposit;
-            $deposit->setCategory($this);
+            $deposit->addGroup($this);
         }
 
         return $this;
@@ -108,10 +109,7 @@ class Category
     public function removeDeposit(Deposit $deposit): self
     {
         if ($this->deposits->removeElement($deposit)) {
-            // set the owning side to null (unless already changed)
-            if ($deposit->getCategory() === $this) {
-                $deposit->setCategory(null);
-            }
+            $deposit->removeGroup($this);
         }
 
         return $this;

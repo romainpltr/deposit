@@ -26,7 +26,7 @@ class indexController extends AbstractController {
     {
         $this->getUser() ? $user = $this->getUser(): $user = '';
 
-        return $this->render('pages/index.html.twig', [
+        return $this->render('pages/user/mesDepot.html.twig', [
             'user' => $user,
         ]);
     }

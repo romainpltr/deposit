@@ -1,0 +1,68 @@
+<form method="post" action="{{ path("app_login") }}">
+    {% if error is defined and error is not empty %}
+        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+
+    {% if app.user %}
+        <div class="mb-3">
+            You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+        </div>
+    {% endif %}
+    {% embed 'molecules/inputGroup.html.twig' with {
+        label: {
+            for: 'inputEmail',
+            content: 'Email',
+        },
+        input: {
+            attribute: {
+                type: 'email',
+                name: 'email',
+                id: 'inputEmail',
+                placeholder: 'email',
+                required: true,
+                autofocus: true,
+            }
+        }
+
+
+    }%}{% endembed %}
+    {% embed 'molecules/inputGroup.html.twig' with {
+        label: {
+            for: 'inputPassword',
+            content: 'Password',
+        },
+        input: {
+            attribute: {
+                type: 'password',
+                name: 'password',
+                id: 'inputPassword',
+                placeholder: 'Password',
+                required: true,
+                autocomplete: "current-password"
+            }
+        }
+
+
+    }%}{% endembed %}
+
+    <input type="hidden" name="_csrf_token"
+           value="{{ csrf_token('authenticate') }}"
+    >
+
+
+    <div class="checkbox mb-3">
+        <label>
+            <input type="checkbox" name="_remember_me"> Remember me
+        </label>
+    </div>
+
+    {% embed 'atoms/button.html.twig' with {
+        type: 'submit',
+        size: 'md',
+        color: 'primary'
+    }%}
+        {% block btnContent %}
+            Sign in
+        {% endblock %}
+    {% endembed %}
+</form>

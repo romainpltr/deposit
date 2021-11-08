@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Category;
 use App\Entity\Deposit;
+use App\Entity\Group;
 use App\Entity\User;
 use Doctrine\ORM\EntityManagerInterface;
 use Knp\Component\Pager\Paginator;
@@ -35,11 +36,13 @@ class AdminController extends AbstractController
 
         $depots = $this->em->getRepository(Deposit::class)->findAll();
         $categories = $this->em->getRepository(Category::class)->findAll();
+        $groups = $this->em->getRepository(Group::class)->findAll();
 
         return $this->render('pages/admin/index.html.twig', [
             'users' => $users,
             'depots' => $depots,
-            'categories' => $categories
+            'categories' => $categories,
+            'groups' => $groups
         ]);
     }
 }

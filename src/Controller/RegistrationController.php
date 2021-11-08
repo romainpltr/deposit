@@ -39,6 +39,7 @@ class RegistrationController extends AbstractController
                 )
             );
 
+
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);
             $entityManager->flush();
@@ -51,7 +52,8 @@ class RegistrationController extends AbstractController
                     ->subject('Please Confirm your Email')
                     ->htmlTemplate('pages/registration/confirmation_email.html.twig')
             );
-            // do anything else you need here, like send an email
+
+            $this->addFlash('success', 'Un email vous à été envoyé');
         }
 
         return $this->render('pages/registration/register.html.twig', [

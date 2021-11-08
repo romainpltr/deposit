@@ -30,4 +30,9 @@ final class Version20211006205616 extends AbstractMigration
         $this->addSql('DROP TABLE category');
         $this->addSql('DROP TABLE work');
     }
+
+    public function isTransactional(): bool
+    {
+        return false;
+    }
 }

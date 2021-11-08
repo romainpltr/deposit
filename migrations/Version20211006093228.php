@@ -28,4 +28,10 @@ final class Version20211006093228 extends AbstractMigration
         // this down() migration is auto-generated, please modify it to your needs
         $this->addSql('ALTER TABLE user DROP is_verified');
     }
+    
+    public function isTransactional(): bool
+    {
+        return false;
+    }
+
 }

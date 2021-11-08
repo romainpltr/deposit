@@ -81,9 +81,20 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $deposits;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Group::class, inversedBy="users")
+     */
+    private $groupe;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Deposit::class, mappedBy="creator")
+     */
+    private $depot;
+
     public function __construct()
     {
         $this->deposits = new ArrayCollection();
+        $this->depot = new ArrayCollection();
     }
 
 
@@ -277,6 +288,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         if ($this->deposits->removeElement($deposit)) {
             $deposit->removeUser($this);
         }
+
+        return $this;
+    }
+
+    public function getGroupe(): ?Group
+    {
+        return $this->groupe;
+    }
+
+    public function setGroupe(?Group $groupe): self
+    {
+        $this->groupe = $groupe;
 
         return $this;
     }

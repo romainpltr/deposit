@@ -28,4 +28,9 @@ final class Version20211027140538 extends AbstractMigration
         // this down() migration is auto-generated, please modify it to your needs
         $this->addSql('CREATE TABLE work_file (id INT AUTO_INCREMENT NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = \'\' ');
     }
+
+    public function isTransactional(): bool
+    {
+        return false;
+    }
 }

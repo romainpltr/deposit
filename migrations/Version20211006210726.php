@@ -28,4 +28,9 @@ final class Version20211006210726 extends AbstractMigration
         // this down() migration is auto-generated, please modify it to your needs
         $this->addSql('ALTER TABLE work DROP file_name, DROP file_original_name, DROP file_mime_type, DROP file_size, DROP file_dimensions');
     }
+
+    public function isTransactional(): bool
+    {
+        return false;
+    }
 }

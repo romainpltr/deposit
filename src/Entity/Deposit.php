@@ -55,10 +55,27 @@ class Deposit
      */
     private $users;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="deposits")
+     */
+    private $category;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=Group::class, inversedBy="deposits")
+     */
+    private $groups;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="deposits")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $creator;
+
     public function __construct()
     {
         $this->user = new ArrayCollection();
         $this->users = new ArrayCollection();
+        $this->groups = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -114,5 +131,53 @@ class Deposit
     public function getUsers(): Collection
     {
         return $this->users;
+    }
+
+    public function getCategory(): ?Category
+    {
+        return $this->category;
+    }
+
+    public function setCategory(?Category $category): self
+    {
+        $this->category = $category;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Group[]
+     */
+    public function getGroups(): Collection
+    {
+        return $this->groups;
+    }
+
+    public function addGroup(Group $group): self
+    {
+        if (!$this->groups->contains($group)) {
+            $this->groups[] = $group;
+        }
+
+        return $this;
+    }
+
+    public function removeGroup(Group $group): self
+    {
+        $this->groups->removeElement($group);
+
+        return $this;
+    }
+
+    public function getCreator(): ?User
+    {
+        return $this->creator;
+    }
+
+    public function setCreator(?User $creator): self
+    {
+        $this->creator = $creator;
+
+        return $this;
     }
 }

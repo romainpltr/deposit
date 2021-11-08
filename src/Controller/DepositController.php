@@ -22,6 +22,7 @@ class DepositController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
+            $deposit->setCreator($this->getUser());
             $entityManager->persist($deposit);
             $entityManager->flush();
 
