@@ -11,7 +11,7 @@ import './styles/app.scss';
 // start the Stimulus application
 import './bootstrap';
 
-
+global.$ = global.jQuery = $;
 // AlpineJS for JS Interactions
 import Alpine from 'alpinejs';
 window.Alpine = Alpine;

@@ -29,17 +29,9 @@ class GroupController extends AbstractController
             return $this->redirectToRoute('app_admin', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('pages/group/new.html.twig', [
+        return $this->renderForm('pages/admin/group/new.html.twig', [
             'group' => $group,
             'form' => $form,
-        ]);
-    }
-
-    #[Route('/{id}', name: 'group_show', methods: ['GET'])]
-    public function show(Group $group): Response
-    {
-        return $this->render('group/show.html.twig', [
-            'group' => $group,
         ]);
     }
 
@@ -50,12 +42,19 @@ class GroupController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
+            $entityManager = $this->getDoctrine()->getManager();
+            $users = $form->getData()->getUsers()->toArray();
+            foreach ($users as $user) {
+                $user->setGroupe($group);
+                $entityManager->persist($user);
+            }
+            $entityManager->persist($group);
+            $entityManager->flush();
 
             return $this->redirectToRoute('app_admin', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('pages/group/edit.html.twig', [
+        return $this->renderForm('pages/admin/group/edit.html.twig', [
             'group' => $group,
             'form' => $form,
         ]);
@@ -66,7 +65,7 @@ class GroupController extends AbstractController
     {
         if ($this->isCsrfTokenValid('delete'.$group->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->remove($group);
+
             $entityManager->flush();
         }
 

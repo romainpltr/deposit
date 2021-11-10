@@ -57,8 +57,19 @@
                                                     {{ role }}
                                                 {% endfor %}
                                             </td>
-                                            <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                                <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                                            <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium flex justify-end">
+                                                <div class="m-2">
+                                                    {% embed 'atoms/button.html.twig' with {
+                                                        type: 'a',
+                                                        size: 'xs',
+                                                        color: 'primary',
+                                                        href: path("user_edit", {id: user.id})
+                                                    }%}
+                                                        {% block linkContent %}
+                                                            <i class="uil uil-edit-alt"></i>
+                                                        {% endblock %}
+                                                    {% endembed %}
+                                                </div>
                                             </td>
                                         </tr>
                                     {% endfor %}
@@ -110,7 +121,19 @@
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td></td>
+                                            {% if group.users is defined %}
+                                            <td class="px-2 md:px-6 py-4 whitespace-nowrap">
+                                                <div class="flex items-center">
+                                                    <div class="ml-4">
+                                                        <div class="text-sm font-medium text-gray-900">
+                                                            {% for user in group.users %}
+                                                            {{ user.username }}
+                                                            {% endfor %}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            {% endif %}
                                             <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium flex justify-end">
                                                 <div class="m-2">
                                                     {% embed 'atoms/button.html.twig' with {

@@ -1,4 +1,24 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
+
+    {{ form_widget(form.title) }}
+    {{ form_widget(form.description) }}
+    {{ form_widget(form.category) }}
+    {{ form_label(form.workfiles) }}
+    <ul id="workfiles-fields-list"
+        data-prototype="{{ form_widget(form.workfiles.vars.prototype)|e }}"
+        data-widget-tags="{{ '<li></li>'|e }}"
+        data-widget-counter="{{ form.workfiles|length }}">
+        {% for workFileFields in form.workfiles %}
+            <li>
+                {{ form_errors(workFileFields) }}
+                {{ form_widget(workFileFields) }}
+            </li>
+        {% endfor %}
+    </ul>
+
+    <button type="button"
+            class="add-another-collection-widget"
+            data-list-selector="#workfiles-fields-list">Ajouter un autre travail</button>
+
     <button class="btn">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}

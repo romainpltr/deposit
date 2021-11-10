@@ -18,9 +18,6 @@ use EWZ\Bundle\RecaptchaBundle\Validator\Constraints as Recaptcha;
  */
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
-    /**
-     * @Recaptcha\IsTrue
-     */
     public $recaptcha;
 
     /**
@@ -67,7 +64,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private $city;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Deposit::class, inversedBy="User")
+     * @ORM\ManyToOne(targetEntity=Deposit::class, inversedBy="user")
      */
     private $deposit;
 
@@ -89,12 +86,12 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     /**
      * @ORM\OneToMany(targetEntity=Deposit::class, mappedBy="creator")
      */
-    private $depot;
+    private $depotCreator;
 
     public function __construct()
     {
         $this->deposits = new ArrayCollection();
-        $this->depot = new ArrayCollection();
+        $this->depotCreator = new ArrayCollection();
     }
 
 

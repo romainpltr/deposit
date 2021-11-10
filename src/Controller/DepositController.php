@@ -29,7 +29,7 @@ class DepositController extends AbstractController
             return $this->redirectToRoute('app_admin', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('pages/deposit/new.html.twig', [
+        return $this->renderForm('pages/admin/deposit/new.html.twig', [
             'deposit' => $deposit,
             'form' => $form,
         ]);
@@ -47,7 +47,7 @@ class DepositController extends AbstractController
             return $this->redirectToRoute('app_admin', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('pages/deposit/edit.html.twig', [
+        return $this->renderForm('pages/admin/deposit/edit.html.twig', [
             'deposit' => $deposit,
             'form' => $form,
         ]);

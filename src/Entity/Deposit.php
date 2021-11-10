@@ -66,7 +66,7 @@ class Deposit
     private $groups;
 
     /**
-     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="deposits")
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="depotCreator")
      * @ORM\JoinColumn(nullable=false)
      */
     private $creator;

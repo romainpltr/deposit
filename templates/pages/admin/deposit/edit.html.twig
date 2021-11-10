@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Deposit{% endblock %}
+
+{% block body %}
+    <h1>Edit Deposit</h1>
+
+    {{ include('pages/admin/deposit/_form.html.twig', {'button_label': 'Update'}) }}
+
+
+    {{ include('pages/admin/deposit/_delete_form.html.twig') }}
+{% endblock %}

@@ -29,6 +29,12 @@ class WorkController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $workFiles = $work->getWorkfiles();
+            foreach($workFiles as $key => $workFile){
+                $workFile->setWork($work);
+                $workFiles->set($key,$workFile);
+            }
+
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($work);
             $entityManager->flush();
@@ -57,6 +63,13 @@ class WorkController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $workFiles = $work->getWorkfiles();
+            foreach($workFiles as $key => $workFile){
+                $workFile->setWork($work);
+                $workFiles->set($key,$workFile);
+            }
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($work);
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('work_index', [], Response::HTTP_SEE_OTHER);

@@ -47,14 +47,13 @@ class Work
     private $category;
 
     /**
-     * @ORM\OneToMany(targetEntity=Workfile::class, mappedBy="work")
+     * @ORM\OneToMany(targetEntity=Workfile::class, mappedBy="work", cascade={"persist"})
      */
     private $workfiles;
 
 
     #[Pure] public function __construct()
     {
-        $this->file = new EmbeddedFile();
         $this->workfiles = new ArrayCollection();
     }
 
@@ -85,25 +84,6 @@ class Work
         $this->description = $description;
 
         return $this;
-    }
-
-    /**
-     * @param File|null $imageFile
-     */
-    public function setImageFile(?File $imageFile = null)
-    {
-        $this->imageFile = $imageFile;
-
-        if (null !== $imageFile) {
-            // It is required that at least one field changes if you are using doctrine
-            // otherwise the event listeners won't be called and the file is lost
-            $this->updatedAt = new \DateTimeImmutable();
-        }
-    }
-
-    public function getImageFile(): ?File
-    {
-        return $this->imageFile;
     }
 
     public function setImage(EmbeddedFile $image): void
