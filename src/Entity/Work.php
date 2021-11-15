@@ -42,7 +42,6 @@ class Work
 
     /**
      * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="works")
-     * @ORM\JoinColumn(nullable=false)
      */
     private $category;
 
@@ -50,6 +49,12 @@ class Work
      * @ORM\OneToMany(targetEntity=Workfile::class, mappedBy="work", cascade={"persist"})
      */
     private $workfiles;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=WorkCategory::class, inversedBy="works")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $workCategory;
 
 
     #[Pure] public function __construct()
@@ -146,6 +151,18 @@ class Work
                 $workfile->setWork(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getWorkCategory(): ?WorkCategory
+    {
+        return $this->workCategory;
+    }
+
+    public function setWorkCategory(?WorkCategory $workCategory): self
+    {
+        $this->workCategory = $workCategory;
 
         return $this;
     }

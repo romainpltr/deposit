@@ -23,12 +23,6 @@ class WorkType extends AbstractType
 
             ])
             ->add('description', TextareaType::class)
-            ->add('category', EntityType::class, [
-                'class' => Category::class,
-                'choice_label' => 'name',
-                'multiple' => false,
-                'expanded' => false,
-            ])
 
             ->add('workfiles', CollectionType::class, [
                 'entry_type' => WorkfileType::class,

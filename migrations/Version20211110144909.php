@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20211109135150 extends AbstractMigration
+final class Version20211110144909 extends AbstractMigration
 {
     public function getDescription(): string
     {
@@ -20,13 +20,13 @@ final class Version20211109135150 extends AbstractMigration
     public function up(Schema $schema): void
     {
         // this up() migration is auto-generated, please modify it to your needs
-        $this->addSql('ALTER TABLE workfile ADD file_name VARCHAR(255) NOT NULL, ADD updated_at DATETIME NOT NULL');
+        $this->addSql('ALTER TABLE work CHANGE category_id category_id INT DEFAULT NULL');
     }
 
     public function down(Schema $schema): void
     {
         // this down() migration is auto-generated, please modify it to your needs
-        $this->addSql('ALTER TABLE workfile DROP file_name, DROP updated_at');
+        $this->addSql('ALTER TABLE work CHANGE category_id category_id INT NOT NULL');
     }
 
     public function isTransactional(): bool

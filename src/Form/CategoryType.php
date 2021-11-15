@@ -21,7 +21,7 @@ class CategoryType extends AbstractType
                     return $deposit->getName();
                 },
                 'multiple' => true,
-                'required' => true,
+                'required' => false,
             ])
         ;
     }

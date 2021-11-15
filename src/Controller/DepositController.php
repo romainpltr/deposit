@@ -5,12 +5,14 @@ namespace App\Controller;
 use App\Entity\Deposit;
 use App\Form\DepositType;
 use App\Repository\DepositRepository;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 #[Route('/deposit')]
+#[IsGranted('ROLE_ADMIN')]
 class DepositController extends AbstractController
 {
     #[Route('/new', name: 'deposit_new', methods: ['GET','POST'])]

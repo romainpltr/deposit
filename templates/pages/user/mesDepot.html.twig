@@ -1,62 +1,10 @@
 {% include 'base.html.twig' %}
 {% block body %}
-    {% if user.deposits %}
-        <h1 class="text-center text-lg m-4">Mes dépots</h1>
-        <div class="">
-        <div class="grid grid-cols-3 gap-4 m-4">
+    {% if user.deposits is defined and user.deposits is not empty %}
         {% for depot in user.deposits %}
-            {% if not user.groupe in depot.groups %}
-            <div class="bg-white px-4 py-5 border-b rounded-md shadow-md border-gray-200 sm:px-6">
-                <div class="-ml-4 -mt-2 flex items-center justify-between flex-wrap sm:flex-nowrap">
-                    <div class="ml-4 mt-2">
-                        <div class="flex items-center">
-                            <div class="ml-2">
-                                <div class="flex items-center text-gray-900">
-                                    <div class="mr-2 leading-5">
-                                        {{ depot.name }}
-                                    </div>
-                                    <div>
-                                        {% if depot.status %}
-                                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                                                      Ouvert
-                                                    </span>
-                                        {% else %}
-                                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">
-                                                      Fermer
-                                                    </span>
-                                        {% endif %}
-                                    </div>
-
-                                </div>
-                                <div class="text-sm text-gray-500">
-                                    Créateur : {{ depot.creator.username }}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    {% if depot.status %}
-                    <div class="ml-4 mt-2 flex-shrink-0">
-                        {% embed 'atoms/button.html.twig' with {
-                            type: 'a',
-                            size: 'xs',
-                            color: 'primary',
-                            href: path("work_new")
-                        }%}
-                            {% block linkContent %}
-                                Ajouter des travaux
-                            {% endblock %}
-                        {% endembed %}
-                    </div>
-                    {% endif %}
-                </div>
-            </div>
-            {% endif %}
-        {% endfor %}
-        </div>
-            <h1 class="text-center text-lg m-4">Les dépots de mon groupe </h1>
-        <div class="grid grid-cols-3 gap-4 m-4">
-        {% if user.groupe %}
-            {% for depot in user.groupe.deposits %}
+            {% if depot.groups is empty %}
+                <h1 class="text-center text-lg m-4">Mes dépots</h1>
+                <div class="grid grid-cols-3 gap-4 m-4">
                     <div class="bg-white px-4 py-5 border-b rounded-md shadow-md border-gray-200 sm:px-6">
                         <div class="-ml-4 -mt-2 flex items-center justify-between flex-wrap sm:flex-nowrap">
                             <div class="ml-4 mt-2">
@@ -69,12 +17,12 @@
                                             <div>
                                                 {% if depot.status %}
                                                     <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                                                          Ouvert
-                                                        </span>
+                                                              Ouvert
+                                                            </span>
                                                 {% else %}
                                                     <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">
-                                                          Fermer
-                                                        </span>
+                                                              Fermer
+                                                            </span>
                                                 {% endif %}
                                             </div>
 
@@ -86,25 +34,100 @@
                                 </div>
                             </div>
                             {% if depot.status %}
-                                <div class="ml-4 mt-2 flex-shrink-0">
-                                    {% embed 'atoms/button.html.twig' with {
-                                        type: 'a',
-                                        size: 'xs',
-                                        color: 'primary',
-                                        href: path("work_new")
-                                    }%}
-                                        {% block linkContent %}
-                                            Ajouter des travaux
-                                        {% endblock %}
-                                    {% endembed %}
-                                </div>
+                            <div class="ml-4 mt-2 flex-shrink-0">
+                                {% embed 'atoms/button.html.twig' with {
+                                    type: 'a',
+                                    size: 'xs',
+                                    color: 'primary',
+                                    href: path("work_new")
+                                }%}
+                                    {% block linkContent %}
+                                        Ajouter des travaux
+                                    {% endblock %}
+                                {% endembed %}
+                            </div>
                             {% endif %}
                         </div>
                     </div>
-                {% endfor %}
             {% endif %}
+        {% endfor %}
         </div>
-        </div>
+        {% if user.groupe %}
+            <h1 class="text-center text-lg m-4">Les dépots de mon groupe </h1>
+            <div class="grid grid-cols-3 gap-4 m-4">
+                {% if user.groupe.deposits is defined %}
+                    {% for depot in user.groupe.deposits %}
+                            <div class="bg-white px-4 py-5 border-b rounded-md shadow-md border-gray-200 sm:px-6">
+                                <div class="-ml-4 -mt-2 flex items-center justify-between flex-wrap sm:flex-nowrap">
+                                    <div class="ml-4 mt-2">
+                                        <div class="flex items-center">
+                                            <div class="ml-2">
+                                                <div class="flex items-center text-gray-900">
+                                                    <div class="mr-2 leading-5">
+                                                        {{ depot.name }}
+                                                    </div>
+                                                    <div>
+                                                        {% if depot.status %}
+                                                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                                                  Ouvert
+                                                                </span>
+                                                        {% else %}
+                                                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">
+                                                                  Fermer
+                                                                </span>
+                                                        {% endif %}
+                                                    </div>
+
+                                                </div>
+                                                <div class="text-sm text-gray-500">
+                                                    Créateur : {{ depot.creator.username }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% if depot.status %}
+                                        <div class="ml-4 mt-2 flex-shrink-0">
+                                            {% embed 'atoms/button.html.twig' with {
+                                                type: 'a',
+                                                size: 'xs',
+                                                color: 'primary',
+                                                href: path("work_new")
+                                            }%}
+                                                {% block linkContent %}
+                                                    Ajouter des travaux
+                                                {% endblock %}
+                                            {% endembed %}
+                                        </div>
+                                    {% endif %}
+                                </div>
+
+                                <div class=" m-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+                                    <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+                                        <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+                                            <table class="min-w-full divide-y divide-gray-200">
+                                                <tbody>
+                                               {% for work in app.user.work %}
+                                                   {%  if work.category in depot.category %}
+                                                    <tr class="bg-white">
+                                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                                            {{ work.name }}
+                                                        </td>
+                                                    </tr>
+                                                   {% endif %}
+                                                {% endfor %}
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        {% endfor %}
+                {% endif %}
+
+            </div>
+        {% endif %}
+    {% else %}
+        <h1 class="text-center text-lg m-4">Vous n'avez aucun dépot</h1>
     {% endif %}
-    </div>
 {% endblock %}

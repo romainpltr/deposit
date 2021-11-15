@@ -28,4 +28,9 @@ final class Version20211109134153 extends AbstractMigration
         // this down() migration is auto-generated, please modify it to your needs
         $this->addSql('ALTER TABLE workfile ADD updated_at DATETIME NOT NULL');
     }
+
+    public function isTransactional(): bool
+    {
+        return false;
+    }
 }

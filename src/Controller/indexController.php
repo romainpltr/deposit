@@ -2,7 +2,9 @@
 
 namespace App\Controller;
 
+use App\Entity\Category;
 use App\Form\RegistrationFormType;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -22,12 +24,14 @@ class indexController extends AbstractController {
     }
 
     #[Route('/mesDepot', name: 'app_depot')]
-    public function depot(Request $request, UserPasswordHasherInterface $userPasswordHasherInterface): Response
+    public function depot(Request $request, UserPasswordHasherInterface $userPasswordHasherInterface, EntityManagerInterface $em): Response
     {
         $this->getUser() ? $user = $this->getUser(): $user = '';
+        $categories = $em->getRepository(Category::class)->findAll();
 
         return $this->render('pages/user/mesDepot.html.twig', [
             'user' => $user,
+            'categories' => $categories
         ]);
     }
 }

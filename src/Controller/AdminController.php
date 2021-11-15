@@ -6,6 +6,7 @@ use App\Entity\Category;
 use App\Entity\Deposit;
 use App\Entity\Group;
 use App\Entity\User;
+use App\Entity\WorkCategory;
 use Doctrine\ORM\EntityManagerInterface;
 use Knp\Component\Pager\Paginator;
 use Knp\Component\Pager\PaginatorInterface;
@@ -35,14 +36,16 @@ class AdminController extends AbstractController
         );
 
         $depots = $this->em->getRepository(Deposit::class)->findAll();
-        $categories = $this->em->getRepository(Category::class)->findAll();
         $groups = $this->em->getRepository(Group::class)->findAll();
+        $categories = $this->em->getRepository(Category::class)->findAll();
+        $workCategories = $this->em->getRepository(WorkCategory::class)->findAll();
 
         return $this->render('pages/admin/index.html.twig', [
             'users' => $users,
             'depots' => $depots,
             'categories' => $categories,
-            'groups' => $groups
+            'groups' => $groups,
+            'workCategories' => $workCategories
         ]);
     }
 }

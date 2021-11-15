@@ -28,4 +28,9 @@ final class Version20211109153851 extends AbstractMigration
         // this down() migration is auto-generated, please modify it to your needs
         $this->addSql('ALTER TABLE workfile CHANGE name file_name VARCHAR(255) CHARACTER SET utf8mb4 DEFAULT NULL COLLATE `utf8mb4_unicode_ci`');
     }
+
+    public function isTransactional(): bool
+    {
+        return false;
+    }
 }

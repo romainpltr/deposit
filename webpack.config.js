@@ -74,13 +74,12 @@ Encore
     .enableIntegrityHashes(Encore.isProduction())
 
     .copyFiles({
-        from: './assets/files',
+        from: './assets/uploads/',
         to: 'files/[path][name].[ext]'
     })
 
 
 // uncomment if you're having problems with a jQuery plugin
-    .autoProvidejQuery()
 ;
 
 module.exports = Encore.getWebpackConfig();
