@@ -52,9 +52,9 @@
                 <div class="absolute z-10 left-1/2 transform -translate-x-1/2 mt-3 px-2 w-screen max-w-xs sm:px-0" x-show="open" @click.outside="open = false">
                     <div class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
                         <div class="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
-                            {% if categories is defined and categories%}
+                            {% if categories is not empty %}
                                 {% for category in categories %}
-                                    {%  if category.deposits | length > 0 %}
+                                    {%  if category.deposits %}
                                     <a href="#" class="-m-3 p-3 block rounded-md hover:bg-gray-50">
                                         <p class="text-base font-medium text-gray-900">
                                             {{ category.name }}
@@ -65,7 +65,7 @@
                                     </a>
                                     {% endif %}
                                 {% endfor %}
-                            {% else%}
+                            {% else %}
                                 <p class="text-base font-medium text-gray-900 text-center text-gray-500 -m-3 p-3 block rounded-md hover:bg-gray-50">
                                     Aucune rubrique disponible
                                 </p>
@@ -102,8 +102,9 @@
                 <div class="absolute z-10 left-1/2 transform -translate-x-1/2 mt-3 px-2 w-screen max-w-xs sm:px-0" x-show="open" @click.outside="open = false">
                     <div class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
                         <div class="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
-                            {% if app.user.work is defined %}
-                                {% for workCategory in app.user.work %}
+                        {% if workCategories is defined %}
+                            {% if workCategories is not empty %}
+                                {% for workCategory in workCategories %}
                                     <a href="#" class="-m-3 p-3 block rounded-md hover:bg-gray-50">
 
                                         <p class="text-base font-medium text-gray-900">
@@ -118,7 +119,8 @@
                                     <p class="text-base font-medium text-gray-900 text-center text-gray-500 -m-3 p-3 block rounded-md hover:bg-gray-50">
                                         Aucune catégorie disponible
                                     </p>
-                                {% endif %}
+                            {% endif %}
+                        {% endif %}
                         </div>
                     </div>
                 </div>

@@ -39,7 +39,7 @@
                                     type: 'a',
                                     size: 'xs',
                                     color: 'primary',
-                                    href: path("work_new")
+                                    href: path("work_new", {'depot_id': depot.id})
                                 }%}
                                     {% block linkContent %}
                                         Ajouter des travaux
@@ -48,10 +48,32 @@
                             </div>
                             {% endif %}
                         </div>
-                    </div>
+                        {% if depot.works is defined %}
+                            {% for work in depot.works %}
+                                      <div class="bg-white px-4 mt-2 py-5 border-b rounded-md shadow-md border-gray-200 sm:px-6">
+                                        <div class="-ml-4 -mt-2 flex items-center justify-between flex-wrap sm:flex-nowrap">
+                                            <div class="ml-4 mt-2">
+                                            <td class="py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                                {{ work.title }}
+                                            </td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                                {{ work.creator.username }}
+                                            </td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                                <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                                            </td>
+                                            </tr>
+
+                                            <!-- More people... -->
+                                        </div>
+                                        </div>
+                                        </div>
+                            {% endfor %}
+                        {% endif %}
+                    </div>     
+                </div>
             {% endif %}
         {% endfor %}
-        </div>
         {% if user.groupe %}
             <h1 class="text-center text-lg m-4">Les dépots de mon groupe </h1>
             <div class="grid grid-cols-3 gap-4 m-4">
@@ -91,7 +113,7 @@
                                                 type: 'a',
                                                 size: 'xs',
                                                 color: 'primary',
-                                                href: path("work_new")
+                                                href: path("work_new", {id: depot.id})
                                             }%}
                                                 {% block linkContent %}
                                                     Ajouter des travaux

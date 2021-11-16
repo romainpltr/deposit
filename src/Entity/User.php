@@ -68,10 +68,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $deposit;
 
-    /**
-     * @ORM\OneToOne(targetEntity=Work::class, mappedBy="user_id", cascade={"persist", "remove"})
-     */
-    private $work;
 
     /**
      * @ORM\ManyToMany(targetEntity=Deposit::class, mappedBy="users")
@@ -88,10 +84,16 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $depotCreator;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Work::class, mappedBy="creator", orphanRemoval=true)
+     */
+    private $works;
+
     public function __construct()
     {
         $this->deposits = new ArrayCollection();
         $this->depotCreator = new ArrayCollection();
+        $this->works = new ArrayCollection();
     }
 
 
@@ -240,27 +242,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    public function getWork(): ?Work
-    {
-        return $this->work;
-    }
 
-    public function setWork(?Work $work): self
-    {
-        // unset the owning side of the relation if necessary
-        if ($work === null && $this->work !== null) {
-            $this->work->setUserId(null);
-        }
-
-        // set the owning side of the relation if necessary
-        if ($work !== null && $work->getUserId() !== $this) {
-            $work->setUserId($this);
-        }
-
-        $this->work = $work;
-
-        return $this;
-    }
 
     /**
      * @return Collection|Deposit[]
@@ -297,6 +279,36 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setGroupe(?Group $groupe): self
     {
         $this->groupe = $groupe;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Work[]
+     */
+    public function getWorks(): Collection
+    {
+        return $this->works;
+    }
+
+    public function addWork(Work $work): self
+    {
+        if (!$this->works->contains($work)) {
+            $this->works[] = $work;
+            $work->setCreator($this);
+        }
+
+        return $this;
+    }
+
+    public function removeWork(Work $work): self
+    {
+        if ($this->works->removeElement($work)) {
+            // set the owning side to null (unless already changed)
+            if ($work->getCreator() === $this) {
+                $work->setCreator(null);
+            }
+        }
 
         return $this;
     }

@@ -7,6 +7,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use JetBrains\PhpStorm\Pure;
+use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Entity\File as EmbeddedFile;
@@ -36,16 +37,6 @@ class Work
     private $description;
 
     /**
-     * @ORM\OneToOne(targetEntity=User::class, inversedBy="work", cascade={"persist", "remove"})
-     */
-    private $user_id;
-
-    /**
-     * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="works")
-     */
-    private $category;
-
-    /**
      * @ORM\OneToMany(targetEntity=Workfile::class, mappedBy="work", cascade={"persist"})
      */
     private $workfiles;
@@ -55,6 +46,24 @@ class Work
      * @ORM\JoinColumn(nullable=false)
      */
     private $workCategory;
+
+    /**
+     * @Assert\Url
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $linkedFile;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Deposit::class, inversedBy="works")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $deposit;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="works")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $creator;
 
 
     #[Pure] public function __construct()
@@ -101,30 +110,6 @@ class Work
         return $this->image;
     }
 
-    public function getUserId(): ?User
-    {
-        return $this->user_id;
-    }
-
-    public function setUserId(?User $user_id): self
-    {
-        $this->user_id = $user_id;
-
-        return $this;
-    }
-
-    public function getCategory(): ?Category
-    {
-        return $this->category;
-    }
-
-    public function setCategory(?Category $category): self
-    {
-        $this->category = $category;
-
-        return $this;
-    }
-
     /**
      * @return Collection|Workfile[]
      */
@@ -163,6 +148,42 @@ class Work
     public function setWorkCategory(?WorkCategory $workCategory): self
     {
         $this->workCategory = $workCategory;
+
+        return $this;
+    }
+
+    public function getLinkedFile(): ?string
+    {
+        return $this->linkedFile;
+    }
+
+    public function setLinkedFile(?string $linkedFile): self
+    {
+        $this->linkedFile = $linkedFile;
+
+        return $this;
+    }
+
+    public function getDeposit(): ?Deposit
+    {
+        return $this->deposit;
+    }
+
+    public function setDeposit(?Deposit $deposit): self
+    {
+        $this->deposit = $deposit;
+
+        return $this;
+    }
+
+    public function getCreator(): ?User
+    {
+        return $this->creator;
+    }
+
+    public function setCreator(?User $creator): self
+    {
+        $this->creator = $creator;
 
         return $this;
     }

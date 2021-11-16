@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Work;
+use App\Entity\Deposit;
 use App\Form\WorkType;
 use App\Repository\WorkRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -24,7 +25,12 @@ class WorkController extends AbstractController
     #[Route('/new', name: 'work_new', methods: ['GET','POST'])]
     public function new(Request $request): Response
     {
+
         $work = new Work();
+        $entityManager = $this->getDoctrine()->getManager();
+        $depotId = $request->query->get('depot_id');
+        $deposit = $entityManager->getRepository(Deposit::class)->find($depotId);
+
         $form = $this->createForm(WorkType::class, $work);
         $form->handleRequest($request);
 
@@ -34,8 +40,8 @@ class WorkController extends AbstractController
                 $workFile->setWork($work);
                 $workFiles->set($key,$workFile);
             }
-
-            $entityManager = $this->getDoctrine()->getManager();
+            $deposit->addWork($work);
+            $this->getUser()->addWork($work);    
             $entityManager->persist($work);
             $entityManager->flush();
 

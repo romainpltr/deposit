@@ -9,23 +9,32 @@
             <div class="w-full h-100 mt-4">
                 <h2 class="m-4 text-center text-md">Liste des Etudiants</h2>
                 <div class="md:flex-col">
-                    <div class="-my-2 overflow-x-auto px-4">
+                    <div class="-my-2 overflow-x-auto px-2 md:px-4">
                         <div class="py-2 align-middle inline-block min-w-full">
                             <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
                                 <table class="min-w-full divide-y divide-gray-200">
                                     <thead class="bg-gray-50">
                                     <tr>
-                                        <th scope="col" class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                             Name
                                         </th>
-                                        <th scope="col" class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                             Status
                                         </th>
-                                        <th scope="col" class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                             Role
                                         </th>
                                         <th scope="col" class="flex justify-end px-6 py-3">
-
+                                            {% embed 'atoms/button.html.twig' with {
+                                                        type: 'a',
+                                                        size: 'xs',
+                                                        color: 'primary',
+                                                        href: ""
+                                                    }%}
+                                                        {% block linkContent %}
+                                                            Nouveau Utilisateur
+                                                        {% endblock %}
+                                                    {% endembed %}
                                         </th>
                                     </tr>
                                     </thead>
@@ -172,7 +181,7 @@
                 </div>
             </div>
             <div class="w-full h-100 mt-4">
-                <h2 class="text-center mx-auto text-md md:m-4"> Liste des Dépots</h2>
+                <h2 class="text-center mx-auto text-md m-4"> Liste des Dépots</h2>
                 <div class="md:flex-col">
                     <div class="-my-2 overflow-x-auto px-4">
                         <div class="py-2 align-middle inline-block min-w-full">
@@ -281,7 +290,7 @@
                 </div>
                 <h2 class="m-4 text-center text-md"> Liste des Catégories</h2>
                 <div class="md:flex-col">
-                    <div class="-my-2 overflow-x-auto px-2 md:px-4">
+                    <div class="-my-2 overflow-x-auto px-2 md:px-4 ">
                         <div class="py-2 align-middle inline-block min-w-full">
                             <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
                                 <table class="min-w-full divide-y divide-gray-200">
@@ -372,5 +381,78 @@
                 </div>
             </div>
         </div>
+        <h2 class="text-center mx-auto text-md m-4"> Liste des catégories de travaux</h2>
+        <div class="md:flex-col">
+          <div class="-my-4 mt-4 overflow-x-auto px-6">
+                        <div class="py-2 align-middle inline-block min-w-full">
+                            <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+                                <table class="min-w-full divide-y divide-gray-200">
+                                    <thead class="bg-gray-50">
+                                    <tr>
+                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            Name
+                                        </th>
+                                        <th scope="col" class="flex justify-end px-6 py-3">
+                                            {% embed 'atoms/button.html.twig' with {
+                                                type: 'a',
+                                                size: 'xs',
+                                                color: 'secondary',
+                                                href: path("work_category_new")
+                                            }%}
+                                                {% block linkContent %}
+                                                    Nouvelle Catégorie de travaux
+                                                {% endblock %}
+                                            {% endembed %}
+                                        </th>
+                                    </tr>
+                                    </thead>
+                                    <tbody class="bg-white divide-y divide-gray-200">
+                                    {% for workCategorie in workCategories %}
+
+                                        <tr>
+                                            <td class="px-6 py-4 whitespace-nowrap">
+                                                <div class="flex items-center">
+                                                    <div class="ml-4">
+                                                        <div class="text-sm font-medium text-gray-900">
+                                                            {{ workCategorie.name }}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="px-6 py-4 flex whitespace-nowrap text-right text-sm font-medium justify-end">
+                                                <div class="m-2">
+                                                    {% embed 'atoms/button.html.twig' with {
+                                                        type: 'a',
+                                                        size: 'xs',
+                                                        color: 'primary',
+                                                        href: path("work_category_edit", {id: workCategorie.id})
+                                                    }%}
+                                                        {% block linkContent %}
+                                                            <i class="uil uil-edit-alt"></i>
+                                                        {% endblock %}
+                                                    {% endembed %}
+                                                </div>
+                                                <div class="m-2">
+                                                    {% embed 'atoms/button.html.twig' with {
+                                                        type: 'a',
+                                                        size: 'xs',
+                                                        color: 'danger',
+                                                        href: path('work_category_delete', {id: workCategorie.id})
+                                                    }%}
+                                                        {% block linkContent %}
+                                                            <i class="uil uil-trash"></i>
+                                                        {% endblock %}
+                                                    {% endembed %}
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                    <!-- More people... -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
     </div>
 {% endblock %}

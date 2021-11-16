@@ -25,18 +25,12 @@ class Category
     private $name;
 
     /**
-     * @ORM\OneToMany(targetEntity=Work::class, mappedBy="category")
-     */
-    private $works;
-
-    /**
      * @ORM\OneToMany(targetEntity=Deposit::class, mappedBy="category")
      */
     private $deposits;
 
     public function __construct()
     {
-        $this->works = new ArrayCollection();
         $this->deposits = new ArrayCollection();
     }
 
@@ -53,36 +47,6 @@ class Category
     public function setName(string $name): self
     {
         $this->name = $name;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection|Work[]
-     */
-    public function getWorks(): Collection
-    {
-        return $this->works;
-    }
-
-    public function addWork(Work $work): self
-    {
-        if (!$this->works->contains($work)) {
-            $this->works[] = $work;
-            $work->setCategory($this);
-        }
-
-        return $this;
-    }
-
-    public function removeWork(Work $work): self
-    {
-        if ($this->works->removeElement($work)) {
-            // set the owning side to null (unless already changed)
-            if ($work->getCategory() === $this) {
-                $work->setCategory(null);
-            }
-        }
 
         return $this;
     }

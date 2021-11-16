@@ -71,11 +71,17 @@ class Deposit
      */
     private $creator;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Work::class, mappedBy="deposit")
+     */
+    private $works;
+
     public function __construct()
     {
         $this->user = new ArrayCollection();
         $this->users = new ArrayCollection();
         $this->groups = new ArrayCollection();
+        $this->works = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -177,6 +183,36 @@ class Deposit
     public function setCreator(?User $creator): self
     {
         $this->creator = $creator;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Work[]
+     */
+    public function getWorks(): Collection
+    {
+        return $this->works;
+    }
+
+    public function addWork(Work $work): self
+    {
+        if (!$this->works->contains($work)) {
+            $this->works[] = $work;
+            $work->setDeposit($this);
+        }
+
+        return $this;
+    }
+
+    public function removeWork(Work $work): self
+    {
+        if ($this->works->removeElement($work)) {
+            // set the owning side to null (unless already changed)
+            if ($work->getDeposit() === $this) {
+                $work->setDeposit(null);
+            }
+        }
 
         return $this;
     }
